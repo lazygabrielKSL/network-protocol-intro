@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+{{content}}
+
+<hr>
+
+<h1>最新文章</h1>
+
+{% for post in site.posts limit:5 %}
+    <h2>{{ post.title }}</h2>
+    <div style="display: flex; flex-flow: column wrap;">
+        <small>{{ post.date | date_to_string }}</small>
+        <div style="display: flex; align-items: center;">
+            {% if post.excerpt_image %}
+                <img src="{{ post.excerpt_image }}" alt="excerpt_image" width="100px">
+            {% endif %}
+            <div style="display: flex; flex-flow: column wrap;">
+                {{ post.excerpt }}
+                <a href="{{ post.url }}" style="text-align: right;">...繼續閱讀</a>
+            </div>
+        </div>
+        <small>標籤：<em>{{ post.tags | join: "</em>、<em>" }}</em></small>
+    </div>
+{% endfor %}

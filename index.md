@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: index
 ---
 
 # 軟橘首頁
