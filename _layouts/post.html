@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<a id="top"></a>
+
+<small>{{ page.date | date_to_string }}</small>
+
+{% if page.tags %}
+  <br>
+  <small>標籤：<em>{{ page.tags | join: "</em>、<em>" }}</em></small>
+{% endif %}
+
+{% if page.banner %}
+  <img src="{{ page.banner }}">
+{% endif %}
+
+<h1>{{ page.title }}</h1>
+
+{{content}}
+
+<hr>
+
+<h1><a href="{{ '/index.html' | relative_url }}">回首頁</a></h1>
+<h1><a href="#top">回頁首</a></h1>
