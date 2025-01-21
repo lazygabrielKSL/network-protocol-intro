@@ -18,7 +18,7 @@ layout: default
             {% endif %}
             <div style="display: flex; flex-flow: column wrap;">
                 {{ post.excerpt }}
-                <a href="{{ post.url }}" style="text-align: right;">...繼續閱讀</a>
+                <a href="{{ post.url | relative_url }}" style="text-align: right;">...繼續閱讀</a>
             </div>
         </div>
         <small>標籤：<em>{{ post.tags | join: "</em>、<em>" }}</em></small>
